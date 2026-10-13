@@ -95,6 +95,7 @@ button.px.sm{padding:6px 10px;font-size:14px}
 <div class="overlay" id="ovCurtain"><div class="card center" id="curtainCard"></div></div>
 <div class="overlay" id="ovRules"><div class="card" id="rulesCard"></div></div>
 <div class="overlay" id="ovPromo"><div class="card center" id="promoCard"></div></div>
+<div class="overlay" id="ovNet"><div class="card" id="netCard"></div></div>
 <div class="overlay" id="ovEnd"><div class="card center" id="endCard"></div></div>
 <script>
 'use strict';
@@ -104,40 +105,44 @@ gl:{sub:"Carreira por quendas con pezas de xadrez",players:"Xogadores",human:"Pe
  orderLine:"Orde de elección da saída: {list}",orderNow:"Orde da rolda: {list}",pick:"{p}: escolle a túa casa de saída",botsThink:"Os bots están a pensar…",turn:"Quenda de {p}",noLook:"Que os demais non miren",ready:"Listo",
  round:"Rolda {n}",myOrder:"moves {k}.º de {t}",choose:"escolle unha peza",chooseDest:"toca unha casa iluminada",confirm:"Confirmar",wait:"Agardar",moves:"Movementos!",
  eat:"{a} come a {b}, que volve a onde empezou a rolda",lose:"{p} perde: {x}",brake:"{p} frea en seco",promo:"{p} corona e recupera: {x}",win:"{p} dá xaque e gaña!",tie:"Empate: {list}",
- again:"Outra carreira",checkHint:"Coroa dourada = xaque ao final da rolda, se ninguén cho estraga",nothing:"Non tes movementos: toca agardar",toGoal:"{n} ata a meta",proto:"Versión 1.1",
+ again:"Outra carreira",checkHint:"Coroa dourada = xaque ao final da rolda, se ninguén cho estraga",nothing:"Non tes movementos: toca agardar",toGoal:"{n} ata a meta",proto:"Versión 1.2",
  rulesList:['Todos escollen en segredo e á vez. Despois as fichas móvense unha a unha por orde de clasificación: quen vai primeiro move primeiro (e queda máis exposto).', 'Non podes repetir peza seguida: cada tipo descansa despois de usalo (Cabalo e Alfil 1 rolda, Torre 3, Raíña 4). As pezas que tes son vidas: só contan cando te comen.', 'Peón: 1 casa cara adiante ou de lado, ou en diagonal cara adiante. O seu primeiro movemento da carreira pode avanzar 2. Só come en diagonal: se vai recto e a casa está ocupada, choca e non avanza.', 'Cabalo: en L e salta. Alfil: diagonal ata 4. Torre: recta ata 6. Raíña: ata 6 en calquera dirección. Se te cruzas cunha ficha que xa chegou, cómela e quedas alí.', 'A ficha comida volve a onde empezou a rolda (ou máis atrás se está ocupado) e perde unha peza dese tipo.', 'Coroar: cruzar a liña dourada cun peón. Escolles recuperar unha peza perdida ou que a Torre ou a Raíña descansen unha rolda menos para sempre.', 'Cofres: aparecen detrás do líder e dan un poder que caduca en 4 roldas. Carga: segundo movemento coa mesma peza (ata 3 casas). Derrubamento: unha rocha abre un burato por diante durante uns turnos. Escudo: anula a próxima comida. Enroque: ao final da rolda trocas a túa posición coa de quen vai xusto diante, se está a 8 casas ou menos.', 'Na recta final non hai cofres nin se poden usar poderes.', 'Catapultas: se rematas nelas cun peón, saes disparado ata a diana. Se alguén está alí, cómelo.', 'Gañas se ao final da rolda dás xaque ao rei coa peza que usaches. Se hai varios xaques, gaña o primeiro na orde.'],
  pu:{carga:"Carga",derrumbe:"Derrubamento",escudo:"Escudo",enroque:"Enroque"},puLabel:"Poder",use:"Usar",using:"Activada ✓",pickHole:"Escoller casa",holeSet:"Rocha marcada ✓",enroqueWith:"Enroque con {p}",noTarget:"Enroque: ninguén diante a 8 casas ou menos",finalNo:"Na recta final non se usan poderes",shieldOn:"Escudo activo ({n})",holePick:"toca unha casa libre por diante para a rocha",carga2:"toca a segunda casa da carga",rock:"{p} fai caer unha rocha",shieldLog:"O escudo de {b} detén a {a}",bump:"{p} choca e non avanza",fly:"{p} sae disparado pola catapulta!",castle:"{a} fai enroque con {b}",chest:"{p} abre un cofre: {u}",promo0:"{p} corona!",promoR:"{p} recupera: {x}",promoF:"{p}: {x} descansa unha rolda menos",promoTitle:"{p} corona!",promoRecover:"Recuperar {x}",promoFaster:"{x}: descanso {n}",catsOpt:"Catapultas",yes:"Si",no:"Non",
  circs:["Patio do castelo","O foso","A serpe"],
+ online:"Xogar en liña",netTitle:"Partida en liña {c}",share:"Compartir ligazón",copied:"Ligazón copiada!",sit:"Sentar aquí",taken:"ocupado",waitSeats:"Agardando a que se senten todos…",waitOthers:"Agardando por: {list}",watching:"Estás mirando a partida",netErr:"Non se puido conectar co servidor",code:"Código",enter:"Entrar",you:"ti",netBot:"bot",
  pieces:{P:"Peón",C:"Cabalo",A:"Alfil",T:"Torre",D:"Raíña"},
  colors:{red:"Vermello",yellow:"Amarelo",green:"Verde",blue:"Azul",orange:"Laranxa",lilac:"Lila"}},
 es:{sub:"Carrera por turnos con piezas de ajedrez",players:"Jugadores",human:"Persona",bot:"Bot",start:"Empezar",rules:"Reglas",close:"Cerrar",menu:"Menú",
  orderLine:"Orden para elegir salida: {list}",orderNow:"Orden de la ronda: {list}",pick:"{p}: elige tu casilla de salida",botsThink:"Los bots están pensando…",turn:"Turno de {p}",noLook:"Que los demás no miren",ready:"Listo",
  round:"Ronda {n}",myOrder:"mueves {k}.º de {t}",choose:"elige una pieza",chooseDest:"toca una casilla iluminada",confirm:"Confirmar",wait:"Esperar",moves:"¡Movimientos!",
  eat:"{a} se come a {b}, que vuelve a donde empezó la ronda",lose:"{p} pierde: {x}",brake:"{p} frena en seco",promo:"{p} corona y recupera: {x}",win:"¡{p} da jaque y gana!",tie:"Empate: {list}",
- again:"Otra carrera",checkHint:"Corona dorada = jaque al final de la ronda, si nadie te lo estropea",nothing:"No tienes movimientos: toca esperar",toGoal:"{n} hasta la meta",proto:"Versión 1.1",
+ again:"Otra carrera",checkHint:"Corona dorada = jaque al final de la ronda, si nadie te lo estropea",nothing:"No tienes movimientos: toca esperar",toGoal:"{n} hasta la meta",proto:"Versión 1.2",
  rulesList:['Todos eligen en secreto y a la vez. Después las fichas se mueven una a una por orden de clasificación: quien va primero mueve primero (y queda más expuesto).', 'No puedes repetir pieza seguida: cada tipo descansa después de usarlo (Caballo y Alfil 1 ronda, Torre 3, Reina 4). Las piezas que tienes son vidas: solo cuentan cuando te comen.', 'Peón: 1 casilla hacia delante o de lado, o en diagonal hacia delante. Su primer movimiento de la carrera puede avanzar 2. Solo come en diagonal: si va recto y la casilla está ocupada, choca y no avanza.', 'Caballo: en L y salta. Alfil: diagonal hasta 4. Torre: recta hasta 6. Reina: hasta 6 en cualquier dirección. Si te cruzas con una ficha que ya ha llegado, te la comes y te quedas allí.', 'La ficha comida vuelve a donde empezó la ronda (o más atrás si está ocupado) y pierde una pieza de ese tipo.', 'Coronar: cruzar la línea dorada con un peón. Eliges recuperar una pieza perdida o que la Torre o la Reina descansen una ronda menos para siempre.', 'Cofres: aparecen detrás del líder y dan un poder que caduca en 4 rondas. Carga: segundo movimiento con la misma pieza (hasta 3 casillas). Derrumbe: una roca abre un agujero por delante durante unos turnos. Escudo: anula la próxima comida. Enroque: al final de la ronda cambias tu posición con la de quien va justo delante, si está a 8 casillas o menos.', 'En la recta final no hay cofres ni se pueden usar poderes.', 'Catapultas: si acabas en ellas con un peón, sales disparado hasta la diana. Si hay alguien allí, te lo comes.', 'Ganas si al final de la ronda das jaque al rey con la pieza que usaste. Si hay varios jaques, gana el primero en el orden.'],
  pu:{carga:"Carga",derrumbe:"Derrumbe",escudo:"Escudo",enroque:"Enroque"},puLabel:"Poder",use:"Usar",using:"Activada ✓",pickHole:"Elegir casilla",holeSet:"Roca marcada ✓",enroqueWith:"Enroque con {p}",noTarget:"Enroque: nadie delante a 8 casillas o menos",finalNo:"En la recta final no se usan poderes",shieldOn:"Escudo activo ({n})",holePick:"toca una casilla libre por delante para la roca",carga2:"toca la segunda casilla de la carga",rock:"{p} hace caer una roca",shieldLog:"El escudo de {b} detiene a {a}",bump:"{p} choca y no avanza",fly:"¡{p} sale disparado por la catapulta!",castle:"{a} hace enroque con {b}",chest:"{p} abre un cofre: {u}",promo0:"¡{p} corona!",promoR:"{p} recupera: {x}",promoF:"{p}: {x} descansa una ronda menos",promoTitle:"¡{p} corona!",promoRecover:"Recuperar {x}",promoFaster:"{x}: descanso {n}",catsOpt:"Catapultas",yes:"Sí",no:"No",
  circs:["Patio del castillo","El foso","La serpiente"],
+ online:"Jugar en línea",netTitle:"Partida en línea {c}",share:"Compartir enlace",copied:"¡Enlace copiado!",sit:"Sentarse aquí",taken:"ocupado",waitSeats:"Esperando a que se sienten todos…",waitOthers:"Esperando a: {list}",watching:"Estás mirando la partida",netErr:"No se pudo conectar con el servidor",code:"Código",enter:"Entrar",you:"tú",netBot:"bot",
  pieces:{P:"Peón",C:"Caballo",A:"Alfil",T:"Torre",D:"Reina"},
  colors:{red:"Rojo",yellow:"Amarillo",green:"Verde",blue:"Azul",orange:"Naranja",lilac:"Lila"}},
 ca:{sub:"Cursa per torns amb peces d'escacs",players:"Jugadors",human:"Persona",bot:"Bot",start:"Començar",rules:"Regles",close:"Tancar",menu:"Menú",
  orderLine:"Ordre per triar sortida: {list}",orderNow:"Ordre de la ronda: {list}",pick:"{p}: tria la teva casella de sortida",botsThink:"Els bots estan pensant…",turn:"Torn de {p}",noLook:"Que els altres no mirin",ready:"A punt",
  round:"Ronda {n}",myOrder:"mous en la posició {k} de {t}",choose:"tria una peça",chooseDest:"toca una casella il·luminada",confirm:"Confirmar",wait:"Esperar",moves:"Moviments!",
  eat:"{a} es menja {b}, que torna on va començar la ronda",lose:"{p} perd: {x}",brake:"{p} frena en sec",promo:"{p} corona i recupera: {x}",win:"{p} fa escac i guanya!",tie:"Empat: {list}",
- again:"Una altra cursa",checkHint:"Corona daurada = escac al final de la ronda, si ningú no t'ho espatlla",nothing:"No tens moviments: toca esperar",toGoal:"{n} fins a la meta",proto:"Versió 1.1",
+ again:"Una altra cursa",checkHint:"Corona daurada = escac al final de la ronda, si ningú no t'ho espatlla",nothing:"No tens moviments: toca esperar",toGoal:"{n} fins a la meta",proto:"Versió 1.2",
  rulesList:['Tothom tria en secret i alhora. Després les fitxes es mouen una a una per ordre de classificació: qui va primer mou primer (i queda més exposat).', 'No pots repetir peça seguida: cada tipus descansa després de fer-lo servir (Cavall i Alfil 1 ronda, Torre 3, Reina 4). Les peces que tens són vides: només compten quan et mengen.', 'Peó: 1 casella endavant o de costat, o en diagonal endavant. El seu primer moviment de la cursa pot avançar 2. Només menja en diagonal: si va recte i la casella és ocupada, xoca i no avança.', 'Cavall: en L i salta. Alfil: diagonal fins a 4. Torre: recta fins a 6. Reina: fins a 6 en qualsevol direcció. Si et creues amb una fitxa que ja ha arribat, te la menges i et quedes allà.', "La fitxa menjada torna on va començar la ronda (o més enrere si és ocupat) i perd una peça d'aquest tipus.", 'Coronar: creuar la línia daurada amb un peó. Tries recuperar una peça perduda o que la Torre o la Reina descansin una ronda menys per sempre.', 'Cofres: apareixen darrere del líder i donen un poder que caduca en 4 rondes. Càrrega: segon moviment amb la mateixa peça (fins a 3 caselles). Esfondrament: una roca obre un forat per davant durant uns torns. Escut: anul·la la propera menjada. Enroc: al final de la ronda intercanvies la teva posició amb la de qui va just davant, si és a 8 caselles o menys.', 'A la recta final no hi ha cofres ni es poden fer servir poders.', "Catapultes: si acabes en una amb un peó, surts disparat fins a la diana. Si hi ha algú, te'l menges.", "Guanyes si al final de la ronda fas escac al rei amb la peça que has fet servir. Si hi ha diversos escacs, guanya el primer en l'ordre."],
  pu:{carga:"Càrrega",derrumbe:"Esfondrament",escudo:"Escut",enroque:"Enroc"},puLabel:"Poder",use:"Fer servir",using:"Activada ✓",pickHole:"Triar casella",holeSet:"Roca marcada ✓",enroqueWith:"Enroc amb {p}",noTarget:"Enroc: ningú davant a 8 caselles o menys",finalNo:"A la recta final no es fan servir poders",shieldOn:"Escut actiu ({n})",holePick:"toca una casella lliure per davant per a la roca",carga2:"toca la segona casella de la càrrega",rock:"{p} fa caure una roca",shieldLog:"L'escut de {b} atura {a}",bump:"{p} xoca i no avança",fly:"{p} surt disparat per la catapulta!",castle:"{a} fa enroc amb {b}",chest:"{p} obre un cofre: {u}",promo0:"{p} corona!",promoR:"{p} recupera: {x}",promoF:"{p}: {x} descansa una ronda menys",promoTitle:"{p} corona!",promoRecover:"Recuperar {x}",promoFaster:"{x}: descans {n}",catsOpt:"Catapultes",yes:"Sí",no:"No",
  circs:["Pati del castell","El fossat","La serp"],
+ online:"Jugar en línia",netTitle:"Partida en línia {c}",share:"Compartir l'enllaç",copied:"Enllaç copiat!",sit:"Seure aquí",taken:"ocupat",waitSeats:"Esperant que tothom segui…",waitOthers:"Esperant: {list}",watching:"Estàs mirant la partida",netErr:"No s'ha pogut connectar amb el servidor",code:"Codi",enter:"Entrar",you:"tu",netBot:"bot",
  pieces:{P:"Peó",C:"Cavall",A:"Alfil",T:"Torre",D:"Reina"},
  colors:{red:"Vermell",yellow:"Groc",green:"Verd",blue:"Blau",orange:"Taronja",lilac:"Lila"}},
 eu:{sub:"Txandakako lasterketa xake-piezekin",players:"Jokalariak",human:"Pertsona",bot:"Bot",start:"Hasi",rules:"Arauak",close:"Itxi",menu:"Menua",
  orderLine:"Irteera aukeratzeko ordena: {list}",orderNow:"Erronda honetako ordena: {list}",pick:"{p}: aukeratu irteerako laukia",botsThink:"Botak pentsatzen ari dira…",turn:"{p}: zure txanda",noLook:"Besteek ez dezatela begiratu",ready:"Prest",
  round:"{n}. erronda",myOrder:"{t}tik {k}. mugitzen zara",choose:"aukeratu pieza bat",chooseDest:"ukitu argiztatutako lauki bat",confirm:"Berretsi",wait:"Itxaron",moves:"Mugimenduak!",
  eat:"{a}-k {b} jan du; erronda hasi zuen lekura itzultzen da",lose:"{p}-k galdu du: {x}",brake:"{p}: bat-bateko balazta",promo:"{p}-k koroatu eta berreskuratu du: {x}",win:"{p}-k xake eman eta irabazi du!",tie:"Berdinketa: {list}",
- again:"Beste lasterketa bat",checkHint:"Urrezko koroa = xake erronda amaieran, inork hondatzen ez badizu",nothing:"Ez duzu mugimendurik: itxaron behar da",toGoal:"{n} helmugara",proto:"1.1 bertsioa",
+ again:"Beste lasterketa bat",checkHint:"Urrezko koroa = xake erronda amaieran, inork hondatzen ez badizu",nothing:"Ez duzu mugimendurik: itxaron behar da",toGoal:"{n} helmugara",proto:"1.2 bertsioa",
  rulesList:['Denek ezkutuan eta aldi berean aukeratzen dute. Gero fitxak banan-banan mugitzen dira sailkapenaren ordenan: aurrena doana mugitzen da lehenengo (eta arriskutsuago geratzen da).', 'Ezin duzu pieza bera jarraian errepikatu: mota bakoitzak atseden hartzen du erabili ondoren (Zalduna eta Alfila erronda 1, Dorrea 3, Erregina 4). Dituzun piezak bizitzak dira: jaten zaituztenean bakarrik zenbatzen dira.', 'Peoia: lauki 1 aurrera edo albora, edo diagonalean aurrera. Lasterketako lehen mugimenduan 2 aurreratu daiteke. Diagonalean bakarrik jaten du: zuzen badoa eta laukia okupatuta badago, talka egin eta ez da aurreratzen.', 'Zalduna: L eran eta jauzi egiten du. Alfila: diagonalean 4 arte. Dorrea: zuzen 6 arte. Erregina: 6 arte edozein norabidetan. Iritsita dagoen fitxa batekin topo egiten baduzu, jan egiten duzu eta han geratzen zara.', 'Jandako fitxa erronda hasi zuen lekura itzultzen da (edo atzerago, okupatuta badago) eta mota horretako pieza bat galtzen du.', 'Koroatu: urrezko marra peoi batekin gurutzatu. Galdutako pieza bat berreskuratzea edo Dorreak edo Erreginak betiko erronda bat gutxiago atseden hartzea aukeratzen duzu.', 'Kutxak: liderraren atzean agertzen dira eta 4 errondatan iraungitzen den boterea ematen dute. Karga: bigarren mugimendua pieza berarekin (3 lauki arte). Lur-jausia: harri batek zulo bat irekitzen du aurrean txanda batzuetan. Ezkutua: hurrengo janaldia baliogabetzen du. Enroke: erronda amaieran zure posizioa justu aurrean doanarenarekin trukatzen duzu, 8 lauki edo gutxiagora badago.', 'Azken zuzenean ez dago kutxarik eta ezin da boterik erabili.', 'Katapultak: peoi batekin bertan amaitzen baduzu, jomugaraino jaurtitzen zaitu. Norbait badago, jan egiten duzu.', 'Irabazi egiten duzu erronda amaieran erregeari xake ematen badiozu erabili duzun piezarekin. Xake bat baino gehiago badago, ordenan lehenak irabazten du.'],
  pu:{carga:"Karga",derrumbe:"Lur-jausia",escudo:"Ezkutua",enroque:"Enroke"},puLabel:"Boterea",use:"Erabili",using:"Aktibatuta ✓",pickHole:"Laukia aukeratu",holeSet:"Harria markatuta ✓",enroqueWith:"Enroke: {p}",noTarget:"Enroke: inor ez aurrean 8 lauki edo gutxiagora",finalNo:"Azken zuzenean ezin da boterik erabili",shieldOn:"Ezkutua aktibo ({n})",holePick:"ukitu aurreko lauki libre bat harriarentzat",carga2:"ukitu kargaren bigarren laukia",rock:"{p}-k harri bat erorarazi du",shieldLog:"{b}-ren ezkutuak {a} geldiarazi du",bump:"{p}-k talka egin du eta ez da aurreratu",fly:"{p} katapultak jaurti du!",castle:"{a}-k enroke egin du {b}-rekin",chest:"{p}-k kutxa bat ireki du: {u}",promo0:"{p}-k koroatu du!",promoR:"{p}-k berreskuratu du: {x}",promoF:"{p}: {x} erronda bat gutxiago atseden",promoTitle:"{p}-k koroatu du!",promoRecover:"Berreskuratu: {x}",promoFaster:"{x}: atsedena {n}",catsOpt:"Katapultak",yes:"Bai",no:"Ez",
  circs:["Gazteluko patioa","Lubakia","Sugea"],
+ online:"Sarean jokatu",netTitle:"Sareko partida {c}",share:"Esteka partekatu",copied:"Esteka kopiatuta!",sit:"Hemen eseri",taken:"hartuta",waitSeats:"Denak eseri arte itxaroten…",waitOthers:"Zain: {list}",watching:"Partida ikusten ari zara",netErr:"Ezin izan da zerbitzariarekin konektatu",code:"Kodea",enter:"Sartu",you:"zu",netBot:"bot",
  pieces:{P:"Peoia",C:"Zalduna",A:"Alfila",T:"Dorrea",D:"Erregina"},
  colors:{red:"Gorria",yellow:"Horia",green:"Berdea",blue:"Urdina",orange:"Laranja",lilac:"Lila"}}
 };
@@ -334,7 +339,7 @@ function drawGround(r,c){
  if(g===1){const v=Math.floor(hsh(r,c,3)*3);if(BRIDGE(r,c))dsub(160,128,32,32,x,y);else tile((r+c)%2===0?v:3+v,0,x,y);const sl=CIRC.startLine;if(r===sl.r&&c>=sl.c0&&c<=sl.c1)dsub(0,160,32,32,x,y);
   if(isTarget(r,c)){ctx.globalAlpha=.85;ctx.drawImage(CAT,64,0,32,32,x,y,32,32);ctx.globalAlpha=1;}
   if(catAt(r,c))ctx.drawImage(CAT,S.catFired&&S.catFired.r===r&&S.catFired.c===c?32:0,0,32,32,x,y,32,32);
-  const ho=S.holes.find(h=>h.r===r&&h.c===c);if(ho&&!(S.rockQ!=null&&ho.born===S.round))tile(1,3,x,y);}
+  const ho=S.holes.find(h=>h.r===r&&h.c===c);if(ho&&!(S.rockQ!=null&&ho.born===(S.anim&&S.anim.res.round!=null?S.anim.res.round:S.round)))tile(1,3,x,y);}
  else if(g===2){if(CIRC.carpet==='blue')dsub(96,160,32,32,x,y);else tile(0,3,x,y);}
  else if(isPillar(r,c)){tile(5,1,x,y);}
  else if(WATER(r,c)){dsub(((Math.floor(NOW/350)+c+r)%3)*32,128,32,32,x,y);if(isTrack(r,c-1)||isTrack(r,c+1)){ctx.fillStyle='rgba(255,255,255,.25)';if(isTrack(r,c-1))ctx.fillRect(x,y,2,TH);if(isTrack(r,c+1))ctx.fillRect(x+TW-2,y,2,TH);}return;}
@@ -552,11 +557,11 @@ function puAction(kind){const p=S.players[S.cur],sel=S.sel;if(!canUsePU(p))retur
 function readyToConfirm(){const sel=S.sel;if(sel.holeMode)return false;if(sel.enroque!=null)return true;return !!(sel.type&&sel.dest&&(!sel.carga||sel.dest2));}
 function confirmMove(){
  const p=S.players[S.cur],sel=S.sel;if(!readyToConfirm())return;
- if(sel.enroque!=null)S.plans[p.i]={type:null,dest:{r:p.pos.r,c:p.pos.c},enroque:sel.enroque};
- else S.plans[p.i]={type:sel.type,dest:sel.dest,dest2:sel.carga?sel.dest2:null,hole:sel.hole};
- S.legal=null;S.phase='between';nextHuman();
+ const plan=sel.enroque!=null?{type:null,dest:{r:p.pos.r,c:p.pos.c},enroque:sel.enroque}:{type:sel.type,dest:sel.dest,dest2:sel.carga?sel.dest2:null,hole:sel.hole};
+ if(NET.on){netSubmit(plan);return;}
+ S.plans[p.i]=plan;S.legal=null;S.phase='between';nextHuman();
 }
-function waitMove(){const p=S.players[S.cur];S.plans[p.i]={type:null,dest:{r:p.pos.r,c:p.pos.c},hole:S.sel.hole};S.legal=null;S.phase='between';nextHuman();}
+function waitMove(){const p=S.players[S.cur];const plan={type:null,dest:{r:p.pos.r,c:p.pos.c},hole:S.sel.hole};if(NET.on){netSubmit(plan);return;}S.plans[p.i]=plan;S.legal=null;S.phase='between';nextHuman();}
 
 const COST={P:.3,C:.4,A:.5,T:1.4,D:2.4};
 function botPlan(p){
@@ -686,6 +691,103 @@ function nextPromoOrRound(){
  setTimeout(startRound,S.players.some(p=>p.human)?150:450);
 }
 
+
+/* ================= EN LIÑA (Supabase "xogos", prefixo xaq_) ================= */
+const SB_URL='https://pmvbllviitutbnoqpnrs.supabase.co';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtdmJsbHZpaXR1dGJub3FwbnJzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk4MTE3NTAsImV4cCI6MjEwNTM4Nzc1MH0.5WMnLv9oY3PXXLjCrxukt6qu2xkNwOvrkbcxYqUrdgo';
+async function rpc(fn,args){
+ const r=await fetch(SB_URL+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},body:JSON.stringify(args)});
+ if(!r.ok)throw new Error(await r.text());const tx=await r.text();return tx?JSON.parse(tx):null;}
+const NET={on:false,id:null,seat:null,token:null,version:0,shown:null,phase:null,info:null,timer:null,busy:false};
+function myTokens(){try{return JSON.parse(localStorage.getItem('xaq_seats')||'{}');}catch(e){return {};}}
+function saveToken(id,seat,token){const m=myTokens();m[id]={seat,token};try{localStorage.setItem('xaq_seats',JSON.stringify(m));}catch(e){}}
+function newCode(){const a='BCDFGHJKLMNPQRSTVWXZ23456789';let c='';for(let i=0;i<5;i++)c+=a[Math.floor(Math.random()*a.length)];return c;}
+function netLink(){return location.origin+location.pathname+'#p='+NET.id;}
+async function netShare(){const url=netLink();
+ if(navigator.share){try{await navigator.share({title:'Xaque á meta',url});return;}catch(e){}}
+ try{await navigator.clipboard.writeText(url);alert(t('copied')+'\n'+url);}catch(e){prompt('',url);}}
+function serialize(extra){return Object.assign({v:1,circ:CIRCUITS.indexOf(CIRC),cats:CATS.length>0,round:S.round,rorder:S.rorder,
+ seats:S.players.map(p=>({color:p.color,human:p.human})),
+ players:S.players.map(p=>({pos:p.pos,look:p.look,promoted:p.promoted,units:p.units,rest:p.rest,restBase:p.restBase,firstPawn:p.firstPawn,pu:p.pu,shield:p.shield})),
+ holes:S.holes,chests:S.chests,log:S.log,winner:S.winner==null?-1:S.winner},extra||{});}
+function deserialize(st){loadCircuit(st.circ);resizeCanvas();CATS=st.cats?CATS_ALL:[];
+ S.players=st.seats.map((x,i)=>Object.assign({i,color:x.color,human:x.human,pos:null,look:'P'},st.players?st.players[i]:{}));
+ S.rorder=st.rorder||st.seats.map((_,i)=>i);S.round=st.round||1;S.holes=st.holes||[];S.chests=st.chests||[];S.log=st.log||[];S.winner=st.winner;}
+function netStop(){NET.on=false;if(NET.timer)clearInterval(NET.timer);NET.timer=null;hide('#ovNet');if(location.hash)history.replaceState(null,'',location.pathname);}
+async function netCreate(){const su=S.setup,id=newCode();
+ const seats=su.slots.slice(0,su.n).map(x=>({color:x.color,human:x.human}));if(!seats.some(x=>x.human))seats[0].human=true;
+ const st={v:1,circ:su.circ,cats:su.cats,phase:'lobby',seats,round:1};
+ try{const ok=await rpc('xaq_crear',{p_id:id,p_estado:st});if(!ok)return netCreate();
+  const seat=seats.findIndex(x=>x.human);const tok=await rpc('xaq_unirse',{p_id:id,p_asento:seat,p_nome:''});saveToken(id,seat,tok);
+  location.hash='p='+id;netOpen(id);}catch(e){console.error(e);alert(t('netErr'));}}
+function netOpen(id){netStop();NET.on=true;NET.id=id;const m=myTokens()[id];NET.seat=m?m.seat:null;NET.token=m?m.token:null;
+ NET.version=0;NET.shown=null;NET.phase=null;S.players=[];S.anim=null;
+ hide('#ovMenu');hide('#ovEnd');$('#app').classList.add('playing');S.phase='netwait';renderPanel();
+ netPoll();NET.timer=setInterval(netPoll,4000);}
+async function netPoll(){
+ if(!NET.on||NET.busy)return;NET.busy=true;let again=false;
+ try{
+  const info=await rpc('xaq_info',{p_id:NET.id});
+  if(!info){NET.busy=false;alert(t('netErr'));openMenu();return;}
+  NET.info=info;const st=info.estado;
+  if(info.version!==NET.version){
+   NET.version=info.version;NET.phase=st.phase;
+   if(st.phase==='lobby'){loadCircuit(st.circ);resizeCanvas();S.players=[];S.log=[];renderNetLobby(st,info);show('#ovNet');
+    const humans=st.seats.map((x,i)=>x.human?i:-1).filter(i=>i>=0),seated=info.asentos.map(a=>a.a);
+    if(NET.token&&humans.every(i=>seated.includes(i))){await netStart(st);again=true;}}
+   else{hide('#ovNet');const prev=NET.shown;deserialize(st);NET.shown=st.round;
+    if(st.last&&prev!=null&&st.last.round===prev&&S.phase!=='anim')playLast(st.last);else netEnterRound();}}
+  else if(NET.phase==='lobby')renderNetLobby(st,info);
+  else if(S.phase==='netwait')renderPanel();
+  if(NET.phase==='play'&&NET.token&&S.phase!=='anim'&&S.phase!=='select'){
+   const hum=S.players.filter(p=>p.human).length;if((info.enviadas||[]).length>=hum){await netResolve();again=true;}}
+ }catch(e){console.error(e);}
+ NET.busy=false;if(again)setTimeout(netPoll,60);}
+function renderNetLobby(st,info){const seated=info.asentos.map(a=>a.a);
+ $('#netCard').innerHTML=`<h2>${t('netTitle',{c:NET.id})}</h2><div class="sub">${STR[LANG].circs[st.circ]}</div>
+ <div class="row"><button class="px" id="shareBtn">🔗 ${t('share')}</button></div>
+ ${st.seats.map((x,i)=>`<div class="slot"><span class="px" style="flex:1;border:2px solid var(--ink);padding:6px 10px"><span class="chip" style="background:${BASECOL[x.color]}"></span>${cn(x.color)}</span>${
+  !x.human?`<span style="flex:1;align-self:center">${t('netBot')}</span>`:seated.includes(i)?`<span style="flex:1;align-self:center">${NET.seat===i?'✓ '+t('you'):t('taken')}</span>`:
+  NET.token?`<span style="flex:1"></span>`:`<button class="px sm on" data-sit="${i}" style="flex:1">${t('sit')}</button>`}</div>`).join('')}
+ <p class="sub">${t('waitSeats')}</p><div class="row"><button class="px sm" id="netMenu">${t('menu')}</button></div>`;
+ $('#shareBtn').onclick=netShare;$('#netMenu').onclick=openMenu;
+ $('#netCard').querySelectorAll('[data-sit]').forEach(b=>b.onclick=async()=>{const i=+b.dataset.sit;
+  try{const tok=await rpc('xaq_unirse',{p_id:NET.id,p_asento:i,p_nome:''});if(tok){saveToken(NET.id,i,tok);NET.seat=i;NET.token=tok;}NET.version=0;netPoll();}catch(e){alert(t('netErr'));}});}
+async function netStart(lobby){
+ loadCircuit(lobby.circ);CATS=lobby.cats?CATS_ALL:[];const slots=shuffle(STARTS.slice());
+ S.players=lobby.seats.map((x,i)=>({i,color:x.color,human:x.human,pos:{...slots[i]},look:'P',promoted:false,units:makeArmy(),rest:newRest(),restBase:{...REST},firstPawn:true,pu:null,shield:0}));
+ S.rorder=S.players.map(p=>p.i);S.round=1;S.holes=[];S.chests=[];S.log=[];S.winner=-1;orderByStanding();spawnChest();
+ await rpc('xaq_gardar',{p_id:NET.id,p_version:NET.version,p_estado:serialize({phase:'play'}),p_asento:NET.seat,p_token:NET.token});NET.version=-1;}
+function netEnterRound(){
+ if(NET.phase==='end'){S.phase='end';renderPanel();renderEnd(S.winner);show('#ovEnd');return;}
+ const sent=(NET.info&&NET.info.enviadas)||[];
+ if(NET.seat!=null&&S.players[NET.seat]&&!sent.includes(NET.seat)){S.cur=NET.seat;beginSelect();}
+ else{S.phase='netwait';S.legal=null;renderPanel();}}
+async function netSubmit(plan){S.phase='netwait';S.legal=null;renderPanel();
+ try{await rpc('xaq_enviar',{p_id:NET.id,p_asento:NET.seat,p_token:NET.token,p_rolda:S.round,p_plan:plan});
+  if(NET.info&&NET.info.enviadas&&!NET.info.enviadas.includes(NET.seat))NET.info.enviadas.push(NET.seat);renderPanel();setTimeout(netPoll,50);}
+ catch(e){console.error(e);alert(t('netErr'));netEnterRound();}}
+function applyRound(res){const P=S.players;
+ res.cur.forEach((o,i)=>{P[i].pos={r:o.r,c:o.c};P[i].look=o.look;});
+ P.forEach(p=>{ORDER.forEach(ty=>{if(p.rest[ty]>0)p.rest[ty]--;});if(p.pu){p.pu.ttl--;if(p.pu.ttl<=0)p.pu=null;}if(p.shield>0)p.shield--;});
+ S.holes.forEach(h=>h.ttl--);S.holes=S.holes.filter(h=>h.ttl>0);
+ res.picks.forEach(({i,t})=>{if(t==='escudo')P[i].shield=4;else P[i].pu={t,ttl:4};});
+ S.log=res.log;res.promos.forEach(i=>{const p=P[i],o=promoOptions(p);if(o.length)applyPromo(p,o[0].k==='rec'?o[0]:o.find(x=>x.t==='D')||o[0]);});
+ S.winner=res.winner;}
+async function netResolve(){
+ const plans=await rpc('xaq_xogadas_rolda',{p_id:NET.id,p_rolda:S.round});if(!plans)return;
+ const prev=S.round;S.plans={};S.players.forEach(p=>{S.plans[p.i]=p.human?plans[String(p.i)]:botPlan(p);});
+ if(S.players.some(p=>!S.plans[p.i]))return;
+ const res=resolve();applyRound(res);
+ let phase='play';if(S.winner>=0||S.round>=90)phase='end';else{S.round++;orderByStanding();spawnChest();}
+ await rpc('xaq_gardar',{p_id:NET.id,p_version:NET.version,p_estado:serialize({phase,last:{round:prev,snaps:res.snaps,steps:res.steps,rocks:res.rocks}}),p_asento:NET.seat,p_token:NET.token});
+ NET.version=-1;}
+function playLast(last){
+ const a={t0:performance.now(),d1:420,d2:560,pre:last.rocks.length?700:0,steps:last.steps,snaps:last.snaps,focus:-1,online:true,res:{rocks:last.rocks,steps:last.steps,snaps:last.snaps,round:last.round}};
+ a.total=a.pre+last.steps.reduce((x,st)=>x+a.d1*Math.max(1,st.pts.length-1)+(st.victim>=0?a.d2:0),0)+(last.steps.length?0:250);
+ S.anim=a;S.phase='anim';renderPanel();}
+function netAfterAnim(){S.anim=null;S.rockQ=null;S.catFired=null;netEnterRound();}
+
 /* ================= INTERFACE ================= */
 function logLine(e){const v={};
  if(e.a!=null)v.a=nm(e.a);if(e.b!=null)v.b=nm(e.b);if(e.p!=null)v.p=nm(e.p);if(e.x)v.x=pn(e.x);
@@ -712,7 +814,10 @@ function renderPanel(){
   else{hint.textContent=t('checkHint');ok.style.display='';ok.disabled=!readyToConfirm();}
  }
  else if(S.phase==='wait'||S.phase==='anim'){st.innerHTML=t('round',{n:S.round})+' — '+t('moves');}
+ else if(S.phase==='netwait'){const sent=(NET.info&&NET.info.enviadas)||[];const w=S.players.filter(p=>p.human&&!sent.includes(p.i)).map(p=>nm(p.i));
+  st.innerHTML=t('round',{n:S.round})+' — '+(NET.seat==null?t('watching'):t('waitOthers',{list:w.join(', ')}));}
  else st.innerHTML='';
+ if(NET.on&&S.phase!=='menu'){const b=document.createElement('button');b.className='px sm';b.textContent='🔗 '+NET.id;b.onclick=netShare;$('#pu').appendChild(b);}
  const ro=S.rorder.length?S.rorder:S.players.map(p=>p.i);
  $('#roster').innerHTML=ro.filter(i=>S.players[i]&&S.players[i].pos).map((i,k)=>`<span>${k+1}. ${nm(i)} · ${t('toGoal',{n:dist[S.players[i].pos.r][S.players[i].pos.c]})}</span>`).join('');
  $('#log').innerHTML=S.log.slice().reverse().filter(e=>e.k!=='round'&&e.k!=='orderNow'&&e.k!=='orderLine').map(logLine).join('<br>');
@@ -749,6 +854,7 @@ function renderMenu(){
  ${su.slots.slice(0,su.n).map((s,i)=>`<div class="slot"><button class="px sm" data-col="${i}" style="flex:1;text-align:left"><span class="chip" style="background:${BASECOL[s.color]}"></span>${cn(s.color)}</button><button class="px sm" data-hum="${i}" style="flex:1">${s.human?t('human'):t('bot')}</button></div>`).join('')}
  <div class="row" style="align-items:flex-start">${CIRCUITS.map((c,i)=>`<button class="px sm ${su.circ===i?'on':''}" data-circ="${i}" style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1"><img alt="" src="${miniMap(i)}" style="height:90px;image-rendering:pixelated">${STR[LANG].circs[i]}</button>`).join('')}</div>
  <div class="row"><span>${t('catsOpt')}</span><button class="px sm ${su.cats?'on':''}" id="catsBtn">${su.cats?t('yes'):t('no')}</button></div>
+ <div class="row"><button class="px" id="netBtn">🌐 ${t('online')}</button><input id="codeIn" placeholder="${t('code')}" maxlength="5" autocapitalize="characters" style="width:84px;font:inherit;padding:6px;border:2px solid var(--ink);background:var(--bg);color:var(--ink)"><button class="px sm" id="joinBtn">${t('enter')}</button></div>
  <div class="row"><button class="px on" id="goBtn">${t('start')}</button><button class="px" id="menuRules">${t('rules')}</button></div>`;
  m.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>{su.n=+b.dataset.n;renderMenu();});
  m.querySelectorAll('[data-col]').forEach(b=>b.onclick=()=>{const i=+b.dataset.col;const used=su.slots.slice(0,su.n).map(s=>s.color);
@@ -756,12 +862,14 @@ function renderMenu(){
   su.slots[i].color=COLORS[k];renderMenu();});
  m.querySelectorAll('[data-hum]').forEach(b=>b.onclick=()=>{const i=+b.dataset.hum;su.slots[i].human=!su.slots[i].human;renderMenu();});
  $('#goBtn').onclick=startGame;
+ $('#netBtn').onclick=netCreate;
+ $('#joinBtn').onclick=()=>{const c=($('#codeIn').value||'').trim().toUpperCase();if(c.length>=4){location.hash='p='+c;netOpen(c);}};
  renderFlags();
  $('#catsBtn').onclick=()=>{su.cats=!su.cats;renderMenu();};
  m.querySelectorAll('[data-circ]').forEach(b=>b.onclick=()=>{su.circ=+b.dataset.circ;renderMenu();});
  $('#menuRules').onclick=()=>{renderRules();show('#ovRules');};
 }
-function openMenu(){$('#app').classList.remove('playing');S.phase='menu';S.players=[];S.holes=[];S.chests=[];S.rorder=[];S.log=[];S.legal=null;S.anim=null;renderMenu();renderPanel();show('#ovMenu');}
+function openMenu(){netStop();$('#app').classList.remove('playing');S.phase='menu';S.players=[];S.holes=[];S.chests=[];S.rorder=[];S.log=[];S.legal=null;S.anim=null;renderMenu();renderPanel();show('#ovMenu');}
 function renderFlags(){if(!$('#flags'))return;
  $('#flags').innerHTML=['gl','es','ca','eu'].map(l=>`<button class="flag ${l===LANG?'on':''}" data-l="${l}" aria-label="${l}">${FLAGS[l]}</button>`).join('');
  $('#flags').querySelectorAll('button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));}
@@ -779,12 +887,13 @@ $('#btnMenu').onclick=openMenu;
 $('#btnZoom').onclick=()=>{ZOOM=!ZOOM;applyZoom();const p=S.players[S.cur!=null?S.cur:0];if(p&&p.pos)setTimeout(()=>follow(p.pos.r,p.pos.c),30);};
 
 function frame(now){
- if(S.phase==='anim'&&S.anim&&now-S.anim.t0>=S.anim.total)finishAnim();
+ if(S.phase==='anim'&&S.anim&&now-S.anim.t0>=S.anim.total){if(S.anim.online)netAfterAnim();else finishAnim();}
  if(camTarget!=null){const c0=stage.scrollTop,d=camTarget-c0;if(Math.abs(d)<2)camTarget=null;else{stage.scrollTop=c0+d*.15;if(stage.scrollTop===c0)camTarget=null;}}
  if(camX!=null){const x0=stage.scrollLeft,d=camX-x0;if(Math.abs(d)<2)camX=null;else{stage.scrollLeft=x0+d*.15;if(stage.scrollLeft===x0)camX=null;}}
  draw(now);cv.style.transform=(S.fx&&S.fx.q<.25)?`translate(${Math.round(Math.random()*6-3)}px,${Math.round(Math.random()*6-3)}px)`:'';requestAnimationFrame(frame);
 }
-function boot(){if(!TILES.complete){TILES.onload=boot;return;}if(!DECO.complete){DECO.onload=boot;return;}if(!CAT.complete){CAT.onload=boot;return;}applyZoom();setLang(LANG);openMenu();requestAnimationFrame(frame);}
+function boot(){if(!TILES.complete){TILES.onload=boot;return;}if(!DECO.complete){DECO.onload=boot;return;}if(!CAT.complete){CAT.onload=boot;return;}applyZoom();setLang(LANG);
+ const m=location.hash.match(/p=([A-Z0-9]{4,6})/i);if(m){renderPanel();netOpen(m[1].toUpperCase());}else openMenu();requestAnimationFrame(frame);}
 if(ATLAS.complete)boot();else ATLAS.onload=boot;
 </script>
 </body>

@@ -10,13 +10,31 @@ Es una sola página web (`index.html`), sin dependencias ni servidor: todo el ju
 2. Arriba a la derecha pulsa **+** y luego **New repository**.
 3. En **Repository name** escribe `xaque-a-meta`, deja marcado **Public** y pulsa **Create repository**.
 4. En la página del repositorio vacío, pulsa el enlace **uploading an existing file**.
-5. Descomprime el zip en tu ordenador y arrastra a esa ventana los tres archivos: `index.html`, `README.md` y `.nojekyll`.
+5. Descomprime el zip en tu ordenador y arrastra a esa ventana los archivos: `index.html`, `README.md`, `supabase-xaq.sql` y `.nojekyll`.
    - El archivo `.nojekyll` está oculto en algunos sistemas. Si no lo ves, no pasa nada: el juego funciona igual sin él.
 6. Abajo pulsa **Commit changes**.
 7. Ve a la pestaña **Settings** del repositorio y, en el menú de la izquierda, entra en **Pages**.
 8. En **Source** elige **Deploy from a branch**. En **Branch** elige `main` y la carpeta `/ (root)`, y pulsa **Save**.
 9. Espera uno o dos minutos y recarga esa página. Arriba aparecerá la dirección del juego, del tipo:
    `https://TU-USUARIO.github.io/xaque-a-meta/`
+
+## Modo en línea (Supabase)
+
+El juego usa tu proyecto de Supabase `xogos`, con tablas que empiezan por `xaq_`. Solo hay que prepararlo una vez:
+
+1. Entra en [supabase.com](https://supabase.com) y abre el proyecto **xogos**.
+2. En el menú de la izquierda pulsa **SQL Editor** y luego **New query**.
+3. Abre el archivo `supabase-xaq.sql` de este zip, copia todo su contenido y pégalo en el editor.
+4. Pulsa **Run**. Debe aparecer "Success. No rows returned".
+
+Para jugar:
+
+1. En el menú del juego configura jugadores (persona o bot), colores y circuito, y pulsa **Xogar en liña**.
+2. Pulsa **Compartir ligazón** y envía el enlace a los demás. Cada persona abre el enlace y pulsa **Sentar aquí** en su color.
+3. Cuando están todos sentados, empieza la partida. Cada uno hace su jugada cuando quiera; al enviar la última, la ronda se resuelve y todos ven la animación al abrir el juego.
+4. Para volver a una partida, basta con abrir otra vez su enlace en el mismo navegador.
+
+El modo en línea funciona en GitHub Pages y en Vercel. En la vista previa de claude.ai no, porque allí no se permiten conexiones a otros servidores.
 
 ## Alternativa: Vercel
 
